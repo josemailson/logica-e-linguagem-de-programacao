@@ -1,0 +1,254 @@
+Algoritmo "numeros"
+// Disciplina  :  [Linguagem e Lógica de Programação] 
+// Professor   : Luis Fabricio
+
+var
+
+numeros: vetor [0..9] de inteiro
+VP: vetor [0..9] de inteiro
+VI: vetor [0..9] de inteiro
+maior, menor, indice, contp, contimp: inteiro
+
+Inicio
+// Seção de Comandos, procedimento, funções, operadores, etc...
+maior <- 0
+menor <- 1000000000
+contp <- 0
+contimp <- 0
+
+para indice de 0 ate 9 faca
+     escreval("Digite numero da posicao ", indice)
+     leia(numeros[indice])
+     se numeros[indice] > maior entao
+     maior <- numeros[indice]
+     fimse
+     se numeros[indice] < menor entao
+     menor <- numeros[indice]
+     fimse
+     se (numeros[indice] MOD 2) = 0 entao
+     contp  <- contp + 1
+     VP[contp] <- numeros[indice]
+     senao
+     contimp <- contimp + 1
+     VI[contimp] <- numeros[indice]
+     fimse
+fimpara
+
+para indice de 0 ate 9 faca
+     escreval("Numero da posicao ", indice, " igual a:", numeros[indice])
+fimpara
+escreval("Maior numero no vetor: ", maior)
+escreval("Menor numero no vetor: ", menor)
+
+escreval("Numeros pares: ")
+para indice de 1 ate contp faca
+     escreval(VP[indice])
+fimpara
+escreval("Numeros impares: ")
+para indice de 1 ate contimp faca
+     escreval(VI[indice])
+fimpara
+Fimalgoritmo
+
+
+Algoritmo "vogais e consoantes"
+// Disciplina  :  [Linguagem e Lógica de Programação] 
+// Professor   : Luis Fabricio
+// Descrição   : um vetor LETRAS de 20 letras e, depois, escreva a quantidade
+//               de vogais que existem dentro do vetor e o percentual de
+//               consoantes
+// Autor(a)    : Jose Mailson Silva do Nascimento
+// Data atual  : 31/03/2018
+Var
+// Seção de Declarações das variáveis 
+   letras: vetor [0..19] de caractere
+   vogais, consoantes, indice: inteiro
+   percentagem: real
+   
+Inicio
+// Seção de Comandos, procedimento, funções, operadores, etc...
+
+vogais <- 0
+consoantes <- 0
+
+para indice de 0 ate 19 faca
+     escreval("Digite uma letra: ")
+     leia(letras[indice])
+     se (letras[indice] = "a") ou (letras[indice] = "e") ou (letras[indice] = "i") ou (letras[indice] = "o") ou (letras[indice] = "u") entao
+        vogais <- vogais + 1
+     senao
+        consoantes <- consoantes + 1
+     fimse
+fimpara
+
+percentagem <- ((consoantes)/20)*100
+     
+escreval("Numero de vogais:", vogais)
+escreval("Percentual de consoantes: ", percentagem, "%")
+Fimalgoritmo
+
+
+Algoritmo "INTERSECAO"
+// Disciplina  :  [Linguagem e Lógica de Programação] 
+// Professor   : Luis Fabricio
+// Descrição   : a partir dos vetores A e B, gerar o vetor INTERSECAO que
+//               corresponde aos elementos que estão no vetor A e também estão
+//               no vetor B. Ou seja, o vetor INTERSECAO será um vetor com os
+//               elementos em comum entre os vetores A e B
+// Autor(a)    : Jose Mailson Silva do Nascimento
+// Data atual  : 31/03/2018
+var
+a, b, c : vetor[0..9] de inteiro
+i, j, k, cont: inteiro
+inicio
+// Seção de Comandos
+cont <- 0
+para i de 0 ate 9 faca
+    escreval("Digite um numero inteiro para o conjunto A")
+    leia(a[i])
+fimpara
+para j de 0 ate 9 faca
+    escreval("Digite um numero inteiro para o conjunto B")
+    leia(b[j])
+fimpara
+
+para i de 0 ate 9 faca
+    para j de 0 ate 9 faca
+         se a[i] = b[j] entao
+         cont <- cont + 1
+         c[cont] <- b[j]
+         fimse
+    fimpara
+fimpara
+escreval("Vetor INTERSECAO:")
+para k de 1 ate cont faca
+     escreval(c[k])
+fimpara
+fimalgoritmo
+
+
+Algoritmo "MATRIZ IMPAR OU PAR"
+// Disciplina  :  [Linguagem e Lógica de Programação] 
+// Professor   : Luis Fabricio
+// Descrição   :  Leia uma matriz N (2X3) de números inteiros e positivos e
+//                gere uma matriz C, do mesmo tamanho, de caracteres, onde cada
+//                posição C[linha, coluna] terá o valor “P” ou “I” dependendo
+//                de se o número da posição correspondente em N[linha, coluna]
+//                for PAR ou IMPAR, respectivamente.
+// Autor(a)    : Jose Mailson Silva do Nascimento
+// Data atual  : 31/03/2018
+Var
+// Seção de Declarações das variáveis 
+N: vetor[0..2, 0..3] de inteiro
+C: vetor[0..2, 0..3] de caractere
+linha, coluna: inteiro
+
+Inicio
+// Seção de Comandos, procedimento, funções, operadores, etc... 
+para linha de 0 ate 1 faca
+     para coluna de 0 ate 2 faca
+     escreval("Digite um numero para a linha/coluna ", linha,"/", coluna)
+     leia(N[linha,coluna])
+     se (N[linha,coluna] mod 2) = 0 entao
+     C[linha,coluna] <- "P"
+     senao
+     C[linha,coluna] <- "I"
+     fimse
+     fimpara
+fimpara
+
+para linha de 0 ate 1 faca
+     para coluna de 0 ate 2 faca
+     escreval("Valor para numero da linha ", linha, " e coluna", coluna)
+     escreval(C[linha,coluna])
+     fimpara
+fimpara
+
+Fimalgoritmo
+
+
+Algoritmo "notas"
+// Disciplina  :  [Linguagem e Lógica de Programação] 
+// Professor   : Luis Fabricio
+// Descrição   : Leia as 4 notas de cada um dos 25 alunos de uma disciplina e
+//               escreva as notas que estão abaixo da média geral da turma e a
+//               porcentagem de notas acima da média da turma
+// Autor(a)    : Jose Mailson Silva do Nascimento
+// Data atual  : 01/04/2018
+Var
+// Seção de Declarações das variáveis 
+   notas: vetor[0..24, 0..3] de real
+   linha, coluna: inteiro
+   soma, media, cont, perc: real
+
+Inicio
+// Seção de Comandos, procedimento, funções, operadores, etc...
+soma <- 0
+para linha de 0 ate 24 faca
+     para coluna de 0 ate 3 faca
+     escreval("Digite a nota do aluno ", linha," na disciplina ", coluna)
+     leia(notas[linha, coluna])
+     soma <- soma + (notas[linha, coluna])
+     fimpara
+fimpara
+
+media <- soma/100
+cont <- 0
+escreval("Notas abaixo da media geral da turma: ")
+para linha de 0 ate 24 faca
+     para coluna de 0 ate 3 faca
+     se notas[linha, coluna] < media entao
+     escreval(notas[linha, coluna])
+     cont <- cont + 1
+     fimse
+     fimpara
+fimpara
+
+perc <- (100 - cont)
+escreval("Percentual de notas acima da media: ", perc, "%")
+
+Fimalgoritmo
+
+
+Algoritmo "notas2"
+// Disciplina  :  [Linguagem e Lógica de Programação] 
+// Professor   : Luis Fabricio
+// Descrição   :  Leia um vetor com os nomes dos 50 alunos de uma turma e uma
+//                matriz com as três notas desses alunos na mesma disciplina.
+//                Depois, calcule e escreva o nome dos alunos com média
+//                superior ou igual à média geral da turma
+// Autor(a)    : Jose Mailson Silva do Nascimento
+// Data atual  : 01/04/2018
+Var
+// Seção de Declarações das variáveis 
+   nomes: vetor[0..49] de caractere
+   notas: vetor[0..49, 0..2] de real
+   media, soma: real
+   linha, coluna: inteiro
+
+Inicio
+// Seção de Comandos, procedimento, funções, operadores, etc... 
+para linha de 0 ate 49 faca
+     escreval("Escreva o nome do aluno ", linha)
+     leia(nomes[linha])
+fimpara
+para linha de 0 ate 49 faca
+     para coluna de 0 ate 2 faca
+     escreval("Digita a nota ", coluna," do aluno ", nomes[linha])
+     leia(notas[linha, coluna])
+     soma <- soma + (notas[linha, coluna])
+     fimpara
+fimpara
+
+media <- soma/150
+
+escreval("Nome dos alunos que ficaram acima da media: ")
+para linha de 0 ate 49 faca
+     para coluna de 0 ate 2 faca
+     se notas[linha, coluna] >= media entao
+     escreval(nomes[linha])
+     fimse
+     fimpara
+fimpara
+
+Fimalgoritmo

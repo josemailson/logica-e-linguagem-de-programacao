@@ -1,0 +1,642 @@
+//LOGICA E LINGUAGEM DE PROGRAMACAO
+//EXERCICIO PAGINA 71
+//NOME: JOSE MAILSON SILVA DO NASCIMENTO
+
+//1
+
+algoritmo "salario reajustado"
+
+var nome: caractere
+    sal: real
+    reajustado: real
+
+inicio
+
+escreval ("Digite o nome do funcionario: ", nome)
+
+leia(nome)
+
+escreval ("Digite o salario desse funcionario: ", sal)
+
+leia(sal)
+
+reajustado <- (sal*1.12)
+
+escreval ("Salario reajustado de ", nome, "ficou em ",reajustado)
+
+fimalgoritmo
+
+//2
+
+algoritmo "media ponderada"
+
+var nota1, nota2, mediap: real
+
+inicio
+
+escreval ("Digite a primeira nota: ")
+
+leia(nota1)
+
+escreva ("Digite a segunda nota: ")
+
+leia(nota2)
+
+mediap <- ((nota1*6)+(nota2*4))/10
+
+escreva ("A media ponderada das notas: ", mediap)
+
+fimalgoritmo
+
+//3
+
+algoritmo "conversor de moeda"
+
+var dolar, rl: real
+
+inicio
+
+escreval ("Conversor de dolar/real. Digite valor em dolar: ")
+
+leia (dolar)
+
+rl <- (dolar*1.7)
+
+escreval ("Em real R$: ", rl)
+
+fimalgoritmo
+
+//4
+
+algoritmo "custo pela distância a percorrer"
+
+var dist, volume, valorgas, custo: real
+
+inicio
+
+escreval ("Digite a distancia a percorrer em km: ")
+
+leia(dist)
+
+escreva ("Digite o valor do litro da gasolina: ")
+
+leia(valorgas)
+
+volume <- (dist/12)
+
+custo <- (volume*valorgas)
+
+escreva ("O custo da viagem sera de R$: ",custo)
+
+fimalgoritmo
+
+//5
+
+algoritmo "invertendo ordem"
+
+var n1, n2, aux: inteiro
+
+inicio
+
+escreval ("Digite um numero: ")
+
+leia(n1)
+
+aux <- n1
+
+escreval ("Digite outro numero: ")
+
+leia(n2)
+
+escreval ("Primeiro numero: ",n1)
+
+escreval ("Segundo numero: ",n2)
+
+escreval ("Invertendo os valores")
+
+n1 <- n2
+n2 <- aux
+
+escreval ("Primeiro numero: ",n1)
+escreval ("Segundo numero: ",n2)
+
+fimalgoritmo
+
+//6
+
+algoritmo "impar ou par"
+
+var num: inteiro
+
+inicio
+
+escreval ("Digite um numero: ")
+
+leia(num)
+
+se (num MOD 2 = 0) entao
+
+	escreval ("Numero par")
+
+senao
+
+	escreval ("Numero impar")
+
+fimse
+
+fimalgoritmo
+
+//7
+
+algoritmo "media/aprovacao"
+
+var nota1, nota2, nota3, media: real
+
+inicio
+
+escreval ("Digite primeira nota: ")
+
+leia(nota1)
+
+escreval ("Digite segunda nota: ")
+
+leia(nota2)
+
+escreval ("Digite terceira nota: ")
+
+leia(nota3)
+
+media <- (nota1 + nota2 + nota3)/3
+
+se media >= 7 entao
+
+	escreval ("Aluno Aprovado")
+
+	senao se (media >= 4) e (media < 7) entao
+
+			escreval ("Aluno em Prova Final")
+
+         senao escreval ("Aluno Reprovado")
+         
+         fimse
+fimse
+
+fimalgoritmo
+
+//8
+
+algoritmo "categoria nadador"
+
+var idade: inteiro
+
+inicio
+
+escreval ("Digite a idade do nadador para descobrir sua categoria: ")
+
+leia(idade)
+
+se idade > 18 entao
+
+	escreval ("Avancada")
+
+senao se (idade >= 13) e (idade < 18) entao
+
+		escreval ("Pre")
+
+      senao se idade (idade >= 8) e (idade <=12) entao
+
+			escreval ("Infatil")
+
+	    senao se (idade >= 7) e (idade <= 5) entao
+
+				escreval ("Junior")
+
+		  senao escreval ("Categorizados apenas a partir de 5 anos de idade")
+
+		   fimse
+
+	     fimse
+
+	fimse
+
+fimse
+
+fimaloritmo
+
+//9
+
+algoritmo "calculadora"
+
+var num1, num2, soma, sub, mult, divi, operacao: inteiro
+
+inicio
+
+	escreval ("Digite um numero: ")
+
+	leia(num1)
+
+	escreval ("Digite um numero: ")
+
+	leia(num2)
+
+	escreval ("Escolha uma das operacoes abaixo")
+
+	escreval ("1=soma")
+
+	escreval ("2=sub")
+
+	escreval ("3=mult")
+
+	escreval ("4=divi")
+
+	escreva ("Operacao: ")
+
+	Leia(operacao)
+
+		se operacao = 1 entao
+
+			soma <- num1+num2
+
+			escreval ("Soma igual a: ", soma)
+
+		senao
+           se operacao = 2 entao
+
+		      	sub <- num1-num2
+
+			escreval ("Subtracao igual a: ", sub)
+
+		      senao
+                 se operacao = 3 entao
+
+			    	mult < - num1*num2
+
+			    	escreval ("Multiplicacao igual a: ",mult)
+
+			    senao
+                  se operacao = 4 entao
+
+				  	divi <- num1/num2
+
+				  	escreval ("Divisao igual a: ", divi)
+
+				   senao
+                    escreval ("Opcao para operacao invalida")
+
+				        fimse
+
+			           fimse
+
+		      fimse
+
+		fimse
+
+fimalgoritmo
+
+//10
+
+algoritmo "numeros em ordem crescente"
+
+var a, b, c: inteiro
+
+Maior, Menor, Meio: inteiro
+
+inicio
+
+Escreval ("Digite tres numero naturias e positivos: ")
+
+leia (a, b, c)
+
+Se (a>=b) e (a>=c) entao
+
+   Maior <- a
+
+   Se (b>=c) entao
+
+       Meio <- b
+
+       Menor <- c
+
+   Senao
+
+       Se (c>=b) entao
+
+           Meio <- c
+           Menor <- b
+       Fimse
+   Fimse
+
+Senao
+   Se (b>=a) e (b>=c) entao
+       Maior <- b
+       Se (a>=c) entao
+           Meio <- a
+           Menor <- c
+       Senao
+           se (c>=a) entao
+               Meio <- c
+               Menor <- a
+           Fimse
+       Fimse
+
+   Senao
+       Se (c>=b) e (c>=a) entao
+           maior <- c
+           Se (b>=a) entao
+               Meio <- b
+               Menor <- a
+           senao
+               se (a>=b) entao
+                   Meio <- a
+                   Menor <- b
+               Fimse
+           Fimse
+      Fimse
+   Fimse
+Fimse
+
+Escreval (Menor, Meio, Maior)
+
+fimalgoritmo
+
+//11
+
+algoritmo "numero por extenso"
+
+var NUMERO: INTEIRO
+
+inicio
+
+ESCREVA("ESCREVA UM NUMERO ENTRE 20 E 39: ")
+LEIA(NUMERO)
+
+ESCOLHA(NUMERO)
+
+CASO 20
+  ESCREVA("VINTE")
+CASO 21
+  ESCREVA("VINTE E UM")
+CASO 22
+  ESCREVA("VINTE E DOIS")
+CASO 23
+  ESCREVA("VINTE E TRES")
+CASO 24
+  ESCREVA("VINTE E QUATRO")
+CASO 25
+  ESCREVA("VINTE E CINCO")
+CASO 26
+  ESCREVA("VINTE E SEIS")
+CASO 27
+  ESCREVA("VINTE E SETE")
+CASO 28
+  ESCREVA("VINTE E OITO")
+CASO 29
+  ESCREVA("VINTE E NOVE")
+CASO 30
+  ESCREVA("TRINTA")
+CASO 31
+  ESCREVA("TRINTA E UM")
+CASO 32
+  ESCREVA("TRINTA E DOIS")
+CASO 33
+  ESCREVA("TRINTA E TRES")
+CASO 34
+  ESCREVA("TRINTA E QUATRO")
+OUTROCASO
+  ESCREVA("NUMERO INVALIDO")
+FIMESCOLHA
+fimalgoritmo
+
+12//
+
+algoritmo "fatorial
+
+var cont, num, mult: Inteiro
+
+inicio
+// Seção de Comandos
+  escreva ("Informe um número e conheça o seu fatorial:  ")
+  leia (num)
+
+  para cont de num ate 2 passo -1 faca
+           se (cont = num) entao
+               mult <- cont * (cont - 1)
+               escreval ("")
+               escreval (cont, " * ", (cont - 1), " = ", mult)
+           fimse
+
+           se (cont < num) e (cont <> 1)  entao
+                mult <- mult * (cont - 1)
+                escreval (mult, " * ", (cont - 1), " = ", mult)
+           fimse
+   fimpara
+           escreval ("")
+           escreval ("O fatorial de ", num, " é: ", mult)
+
+fimalgoritmo
+
+12//
+
+algoritmo "nome_idade"
+var
+  nome, nome_maior: caracter
+  idade,maior,menor:inteiro
+
+inicio
+
+     escreval ("Digite o nome: ")
+     leia (nome)
+     escreval ("Digite a idade: ")
+     leia (idade)
+     enquanto idade <> 0 faca
+
+        se (idade > maior) entao
+           maior <- idade
+           nome_maior <- nome
+        senao
+        fimse
+        escreval ("Digite o nome: ")
+        leia (nome)
+        escreval ("Digite a idade: ")
+        leia (idade)
+     fimenquanto
+     escreval (nome_maior," tem a maior idade ",maior)
+fimalgoritmo
+
+13//
+
+algoritmo "pares de 1 a 50"
+
+var num, pares, soma: inteiro
+
+inicio
+soma <- 0
+para num de 1 ate 50 faca
+      se (num mod 2) = 0 entao
+      pares <- num
+      soma <- soma + pares
+      senao
+      fimse
+      fimpara
+      escreval (soma)
+fimalgoritmo
+
+14//
+
+ algoritmo "PESQUISA"
+var
+   nome, sexo, nome_menor: caracter
+   idade, qtd_homens, qtd_mulheres, qtd_trab_menor18, qtd_nao_trab, soma_idade: inteiro
+   salario, soma_sal_homens, soma_sal_mulheres, menor_renda, pesquisas: real
+   trabalha: logico
+inicio
+   qtd_homens <- 0
+   qtd_mulheres <- 0
+   qtd_trab_menor18 <- 0
+   qtd_nao_trab <- 0
+   soma_idade <- 0
+   soma_sal_homens <- 0
+   soma_sal_mulheres <- 0
+   menor_renda <- 999999
+   pesquisas <- 0
+   escreva("Informe Nome ['FIM' para encerrar]: ")
+   leia(nome)
+   enquanto (nome <> "FIM") faca
+      pesquisas <- pesquisas + 1
+      escreva("Informe a idade: ")
+      leia(idade)
+      enquanto ((idade < 0) ou (idade > 100)) faca
+         escreva("Idade inválida. Reinforme a idade: ")
+          leia(idade)
+      fimenquanto
+      escreva("Informe sexo [M/F]: ")
+      leia(sexo)
+      enquanto ((sexo <> "M") e (sexo <> "F")) faca
+         escreva("Valor inválido. Reinforme sexo [M/F]: ")
+         leia(sexo)
+      fimenquanto
+      escreva("Trabalha? [Verdadeiro/Falso]: ")
+      leia(trabalha)
+      escreva("Informe quantos salários mínimos recebe por mês: ")
+      leia(salario)
+      se (sexo = "M") entao
+         qtd_homens <- qtd_homens + 1
+         soma_sal_homens <- soma_sal_homens + salario
+      senao
+         qtd_mulheres <- qtd_mulheres + 1
+         soma_sal_mulheres <- soma_sal_mulheres + salario
+      fimse
+      se (trabalha) entao
+         se (idade < 18) entao
+            qtd_trab_menor18 <- qtd_trab_menor18 + 1
+         fimse
+         se (salario < menor_renda) entao
+            menor_renda <- salario
+            nome_menor <- nome
+         fimse
+      senao
+         qtd_nao_trab <- qtd_nao_trab + 1
+      fimse
+      soma_idade <- soma_idade + idade
+      escreva("Informe Nome ['FIM' para encerrar]: ")
+      leia(nome)
+   fimenquanto
+   escreval("Quantidade de pesquisas realizadas: ", pesquisas)
+   escreval(" - homens: ", qtd_homens)
+   escreval(" - mulheres: ", qtd_mulheres)
+   escreval("Quantidade pessoas menores de 18 anos que trabalham: ", qtd_trab_menor18)
+   escreval("Renda média dos homens: ", soma_sal_homens / qtd_homens)
+   escreval("Renda média das mulheres: ", soma_sal_mulheres / qtd_mulheres)
+   escreval("Nome e Renda da pessoa que trabalha e que tem a menor renda: ", nome_menor, menor_renda)
+   escreval("Quantidade de pessoas que não trabalham: ", qtd_nao_trab)
+   escreval("Média de idade dos entrevistados: ", soma_idade / (qtd_homens = qtd_mulheres))
+fimalgoritmo
+
+
+15//
+
+algoritmo "sequencia fibonacci"
+
+var num1, num2, num3, cont: inteiro
+
+inicio
+
+cont <- 0
+num1 <- 1
+num2 <- 1
+escreva(num1)
+escreva(num2)
+para cont de 1 ate 15 faca
+     cont <- cont + 1
+     num3 <- num1 + num2
+     escreva(num3)
+     num1 <- num2
+     num2 <- num3
+fimpara
+fimalgoritmo
+
+16//
+
+17//
+
+algoritmo "pesquisa 2"
+
+var
+   nome, sexo, nome_maiorh, nome_menorm: caracter
+   idade, idade_maiorh, idade_menorm, qtd_homens, qtd_mulheres, soma_idade, qnt_internet ,cont: inteiro
+   internet: logico
+inicio
+   qtd_homens <- 0
+   qtd_mulheres <- 0
+   soma_idade <- 0
+   idade_menorm <- 999999
+   idade_maiorh <- 0
+   qnt_internet <- 0
+   cont <- 0
+   escreva("Ecreva nome: ")
+   leia(nome)
+   para cont de 1 ate 200 faca
+      cont <- cont + 1
+      escreva("Informe a idade: ")
+      leia(idade)
+      enquanto ((idade < 0) ou (idade > 100)) faca
+         escreva("Idade inválida. Reinforme a idade: ")
+          leia(idade)
+      fimenquanto
+      escreva("Informe sexo [M/F]: ")
+      leia(sexo)
+      enquanto ((sexo <> "M") e (sexo <> "F")) faca
+         escreva("Valor inválido. Reinforme sexo [M/F]: ")
+         leia(sexo)
+      fimenquanto
+      escreva("Possui internet? [Verdadeiro/Falso]: ")
+      leia(internet)
+      se (internet) entao
+            qnt_internet <- qnt_internet + 1
+      senao
+      fimse
+      se (sexo = "M") entao
+         qtd_homens <- qtd_homens + 1
+         se (internet) entao
+            se idade > idade_maiorh entao
+               idade_maiorh <- idade
+               nome_maiorh <- nome
+               fimse
+         fimse
+      senao
+         qtd_mulheres <- qtd_mulheres + 1
+         se idade < idade_menorm entao
+            idade_menorm <- idade
+            nome_menorm <- nome
+            fimse
+      fimse
+      soma_idade <- soma_idade + idade
+      escreva("Ecreva nome: ")
+      leia(nome)
+   fimpara
+   escreval(" - homens: ", qtd_homens)
+   escreval(" - mulheres: ", qtd_mulheres)
+   escreval("Nome e Idade do homem mais velho com internet: ", nome_maiorh, idade_maiorh)
+   escreval("Quantidade de pessoas que possuem internet: ", qnt_internet)
+   escreval("Média de idade dos entrevistados: ", soma_idade / (qtd_homens + qtd_mulheres))
+fimalgoritmo
